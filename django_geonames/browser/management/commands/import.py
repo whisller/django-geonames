@@ -1,6 +1,10 @@
-from django.core.management import BaseCommand
+import logging
 
+from django.core.management import BaseCommand
+from django_geonames.browser.models import City
 from importer.importer import CitiesIterator
+
+logger = logging.getLogger('main')
 
 
 class Command(BaseCommand):
@@ -12,9 +16,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         with CitiesIterator(options['path']) as cities_iterator:
             for city in cities_iterator:
-                print(city.geonameid)
-                print(city.name)
-                print(city.latitude)
-                print(city.longitude)
-                print(city.country_code)
-                exit()
+                logger.info('Saving "{}" city'.format(city.geonameid))
+                city_model = City(id=city.geonameid, name=city.name, latitude=city.latitude, longitude=city.longitude,
+                                  country_code=city.country_code)
+                city_model.save()
