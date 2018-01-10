@@ -8,6 +8,8 @@ Application runs on python `3.6`, tested on MacOS
 4. `python manage.py migrate`
 5. `python manage.py runserver`
 
+## Import of data
+1. `python manage.py import ./data/cities15000.txt`
 
 ## Refactor notes
-1. `geonames/importer.py` could be extracted as separated library
+1. `importer` could be extracted as separated library
