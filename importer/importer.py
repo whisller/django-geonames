@@ -9,7 +9,8 @@ class City:
         'name': 1,
         'latitude': 4,
         'longitude': 5,
-        'country_code': 8
+        'country_code': 8,
+        'admin2_code': 12
     }
 
     def __init__(self, row):

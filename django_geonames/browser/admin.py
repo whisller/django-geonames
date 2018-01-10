@@ -3,7 +3,7 @@ from django_geonames.browser.models import City
 
 
 class CityAdmin(admin.ModelAdmin):
-    fields = ('name', 'latitude', 'longitude', 'country_code')
+    fields = ('name', 'latitude', 'longitude', 'country_code', 'county')
     actions = None
     list_display = fields
     search_fields = fields

@@ -18,5 +18,5 @@ class Command(BaseCommand):
             for city in cities_iterator:
                 logger.info('Saving "{}" city'.format(city.geonameid))
                 city_model = City(id=city.geonameid, name=city.name, latitude=city.latitude, longitude=city.longitude,
-                                  country_code=city.country_code)
+                                  country_code=city.country_code, county=city.admin2_code)
                 city_model.save()
