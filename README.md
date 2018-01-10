@@ -7,3 +7,7 @@ Application runs on python `3.6`, tested on MacOS
 3. `pip install -r requirements.txt`
 4. `python manage.py migrate`
 5. `python manage.py runserver`
+
+
+## Refactor notes
+1. `geonames/importer.py` could be extracted as separated library
