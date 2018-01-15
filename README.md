@@ -1,5 +1,7 @@
 # Django + Django Admin + load data from www.geonames.org
 
+Simple test app to load data from CSV file to DB and display it inside of Django admin.
+
 ## Installation
 Application runs on python `3.6`, tested on MacOS
 1. `virtualenv -p /usr/local/bin/python3.6 venv`
